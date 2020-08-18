@@ -14,6 +14,7 @@ public class Calculator extends JFrame {
 
 	private JTextField inputSpace;
 	private String num = "";
+	private String prev_operation = "";
 	private ArrayList<String> equation = new ArrayList<String>();
 	
 	public Calculator() {
@@ -59,15 +60,23 @@ public class Calculator extends JFrame {
 	class PadActionListener implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			String operation = e.getActionCommand();
+			
 			if (operation.equals("C")) {
 				inputSpace.setText("");
 			} else if (operation.equals("=")) {
 				String result = Double.toString(calculate(inputSpace.getText()));
 				inputSpace.setText("" + result);
 				num = "";
+			} else if (operation.equals("+") || operation.equals("-") || operation.equals("×") || operation.equals("÷")) {
+				if (inputSpace.getText().equals("") && operation.equals("-")) {
+					inputSpace.setText(inputSpace.getText() + e.getActionCommand());
+				} else if (!inputSpace.getText().equals("") && !prev_operation.equals("+") && !prev_operation.equals("-") && !prev_operation.equals("×") && !prev_operation.equals("÷")) {
+					inputSpace.setText(inputSpace.getText() + e.getActionCommand());
+				}
 			} else {
 				inputSpace.setText(inputSpace.getText() + e.getActionCommand());
 			}
+			prev_operation = e.getActionCommand();
 		}
 	}
 	
@@ -86,6 +95,7 @@ public class Calculator extends JFrame {
 			}
 		}
 		equation.add(num);
+		equation.remove("");
 	}
 	
 	public double calculate(String inputText) {
@@ -118,6 +128,7 @@ public class Calculator extends JFrame {
 					prev = current;
 				}
 			}
+			prev = Math.round(prev * 100000) / 100000.0;
 		}
 		
 		return prev;
@@ -128,4 +139,3 @@ public class Calculator extends JFrame {
 	}
 
 }
-
