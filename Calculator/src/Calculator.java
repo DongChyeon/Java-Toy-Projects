@@ -105,7 +105,9 @@ public class Calculator extends JFrame {
 		double current = 0;
 		String mode = "";
 		
-		for (String s : equation) {
+		for (int i = 0; i < equation.size(); i++) {
+			String s = equation.get(i);
+			
 			if (s.equals("+")) {
 				mode = "add";
 			} else if (s.equals("-")) {
@@ -115,15 +117,39 @@ public class Calculator extends JFrame {
 			} else if (s.equals("÷")) {
 				mode = "div";
 			} else {
+				if ((mode == "mul" || mode == "div") && !s.equals("+") && !s.equals("-") && !s.equals("×") && !s.equals("÷")) {
+					Double one = Double.parseDouble(equation.get(i - 2));
+					Double two = Double.parseDouble(equation.get(i));
+					Double result = 0.0;
+					
+					if (mode == "mul") {
+						result = one * two;
+					} else if (mode == "div") {
+						result = one / two;
+					}
+					
+					equation.add(i + 1, Double.toString(result));
+					
+					for (int j = 0; j < 3; j++) {
+						equation.remove(i - 2);
+					}
+					
+					i -= 2;	// 결과값이 생긴 인덱스로 이동
+				}
+			}
+		}	// 곱셈 나눗셈을 먼저 계산해준다.
+		
+		for (String s : equation) {
+			if (s.equals("+")) {
+				mode = "add";
+			} else if (s.equals("-")) {
+				mode = "sub";
+			} else {
 				current = Double.parseDouble(s);
 				if (mode == "add" ) {
 					prev += current;
 				} else if (mode == "sub") {
 					prev -= current;
-				} else if (mode == "mul") {
-					prev *= current;
-				} else if (mode == "div") {
-					prev /= current;
 				} else {
 					prev = current;
 				}
