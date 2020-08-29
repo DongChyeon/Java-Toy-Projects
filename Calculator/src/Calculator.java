@@ -86,7 +86,7 @@ public class Calculator extends JFrame {
 		for (int i = 0; i < inputText.length(); i++) {
 			char ch = inputText.charAt(i);
 			
-			if (ch == '-' | ch == '+' | ch == '×' | ch == '÷') {
+			if (ch == '-' || ch == '+' || ch == '×' || ch == '÷') {
 				equation.add(num);
 				num = "";
 				equation.add(ch + "");
@@ -117,14 +117,14 @@ public class Calculator extends JFrame {
 			} else if (s.equals("÷")) {
 				mode = "div";
 			} else {
-				if ((mode == "mul" || mode == "div") && !s.equals("+") && !s.equals("-") && !s.equals("×") && !s.equals("÷")) {
+				if ((mode.equals("mul") || mode.equals("div")) && !s.equals("+") && !s.equals("-") && !s.equals("×") && !s.equals("÷")) {
 					Double one = Double.parseDouble(equation.get(i - 2));
 					Double two = Double.parseDouble(equation.get(i));
 					Double result = 0.0;
 					
-					if (mode == "mul") {
+					if (mode.equals("mul")) {
 						result = one * two;
-					} else if (mode == "div") {
+					} else if (mode.equals("div")) {
 						result = one / two;
 					}
 					
@@ -137,18 +137,18 @@ public class Calculator extends JFrame {
 					i -= 2;	// 결과값이 생긴 인덱스로 이동
 				}
 			}
-		}	// 곱셈 나눗셈을 먼저 계산해준다.
+		}	// 곱셈 나눗셈을 먼저 계산한다
 		
 		for (String s : equation) {
 			if (s.equals("+")) {
 				mode = "add";
 			} else if (s.equals("-")) {
 				mode = "sub";
-			} else {
+			}  else {
 				current = Double.parseDouble(s);
-				if (mode == "add" ) {
+				if (mode.equals("add")) {
 					prev += current;
-				} else if (mode == "sub") {
+				} else if (mode.equals("sub")) {
 					prev -= current;
 				} else {
 					prev = current;
@@ -162,6 +162,7 @@ public class Calculator extends JFrame {
 	
 	public static void main(String[] args) {
 		new Calculator();
+			
 	}
 
 }
