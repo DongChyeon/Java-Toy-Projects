@@ -20,6 +20,9 @@ public class Game extends Thread {
 	private int playerWidth, playerHeight, playerSpeed;
 	private int enemyX, enemyY, enemyHP;
 	private int enemyWidth, enemyHeight, enemySpeed, enemyMove;
+	
+	private int delay;
+	private long pretime;
 	private int cnt;	// 주기 컨트롤
 	
 	String playerStatus;
@@ -72,12 +75,16 @@ public class Game extends Thread {
 			playerBulletProcess();
 			enemyBulletProcess();
 			enemyMoveProcess();
-			try {
-				Thread.sleep(20);	// 0.02초간의 쓰레드 슬립
-				cnt++;
-			} catch (InterruptedException ex) {
-				ex.printStackTrace();
-			}
+			
+			pretime = System.currentTimeMillis();
+			if (System.currentTimeMillis() - pretime < delay) {
+				try {
+					Thread.sleep(delay - System.currentTimeMillis() + pretime);
+					cnt++;
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}	// 일정한 주기로 cnt가 증가하게 유지
 		}
 	}
 	
@@ -86,6 +93,7 @@ public class Game extends Thread {
 		enemyHP = 100;
 		playerSpeed = 5;
 		enemySpeed = 5;
+		delay = 20;
 		
 		switch(playerStatus) {
 		case "rock":

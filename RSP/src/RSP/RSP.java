@@ -72,177 +72,22 @@ public class RSP extends JFrame {
 		rockButton.setBounds(50, 300, 100, 100);
 		rockButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				Timer timer1 = new Timer();
-				TimerTask task1 = new TimerTask() {
-
-					@Override
-					public void run() {
-						audio.playSound("src/audio/boxingBell.wav");
-				    	RSP.game.setPlayerStatus("rock");
-						player = "rock";
-						random = (int)(Math.random()*3)+1;
-						switch (random) {
-						case 1:
-							RSP.game.setEnemyStatus("rock");
-							enemy = "rock";
-							break;
-						case 2:
-							RSP.game.setEnemyStatus("scissor");
-							enemy = "scissor";
-							break;
-						case 3:
-							RSP.game.setEnemyStatus("paper");
-							enemy = "paper";
-							break;
-						}
-						isLoadingScreen = true;
-						isMainScreen = false;
-						
-						rockButton.setVisible(false);
-						scissorButton.setVisible(false);
-						paperButton.setVisible(false);
-					}
-				};
-				
-				timer1.schedule(task1, 1000);
-				
-				Timer timer2 = new Timer();
-				TimerTask task2 = new TimerTask() {
-
-				    @Override
-					public void run() {
-						isGameScreen = true;
-						isLoadingScreen = false;
-						isMainScreen = false;
-						addKeyListener(new KeyListener());
-						setFocusable(true);
-						requestFocus();
-						
-						game.start(); 
-					}
-				};
-				
-				timer2.schedule(task2, 3000);
-				
+				gameLoading();
+				gameStart();
 			}
 		});
 		scissorButton.setBounds(200, 300, 100, 100);
 		scissorButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				Timer timer1 = new Timer();
-				TimerTask task1 = new TimerTask() {
-
-					@Override
-					public void run() {
-						audio.playSound("src/audio/boxingBell.wav");
-				    	RSP.game.setPlayerStatus("scissor");
-						player = "scissor";
-						random = (int)(Math.random()*3)+1;
-						switch (random) {
-						case 1:
-							RSP.game.setEnemyStatus("rock");
-							enemy = "rock";
-							break;
-						case 2:
-							RSP.game.setEnemyStatus("scissor");
-							enemy = "scissor";
-							break;
-						case 3:
-							RSP.game.setEnemyStatus("paper");
-							enemy = "paper";
-							break;
-						}
-						isLoadingScreen = true;
-						isMainScreen = false;
-						
-						rockButton.setVisible(false);
-						scissorButton.setVisible(false);
-						paperButton.setVisible(false);
-					}
-				};
-				
-				timer1.schedule(task1, 1000);
-				
-				
-				Timer timer2 = new Timer();
-				TimerTask task2 = new TimerTask() {
-
-				    @Override
-					public void run() {
-						isGameScreen = true;
-						isLoadingScreen = false;
-						isMainScreen = false;
-						addKeyListener(new KeyListener());
-						setFocusable(true);
-						requestFocus();
-						
-						game.start(); 
-					}
-				};
-				
-				timer2.schedule(task2, 3000);
-				
+				gameLoading();
+				gameStart();
 			}
 		});
 		paperButton.setBounds(350, 300, 100, 100);
 		paperButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				Timer timer1 = new Timer();
-				TimerTask task1 = new TimerTask() {
-
-					@Override
-					public void run() {
-						audio.playSound("src/audio/boxingBell.wav");
-				    	RSP.game.setPlayerStatus("paper");
-						player = "paper";
-						random = (int)(Math.random()*3)+1;
-						switch (random) {
-						case 1:
-							RSP.game.setEnemyStatus("rock");
-							enemy = "rock";
-							break;
-						case 2:
-							RSP.game.setEnemyStatus("scissor");
-							enemy = "scissor";
-							break;
-						case 3:
-							RSP.game.setEnemyStatus("paper");
-							enemy = "paper";
-							break;
-						}
-						isLoadingScreen = true;
-						isMainScreen = false;
-						
-						rockButton.setVisible(false);
-						scissorButton.setVisible(false);
-						paperButton.setVisible(false);
-					}
-				};
-				
-				timer1.schedule(task1, 1000);
-				
-				
-				Timer timer2 = new Timer();
-				TimerTask task2 = new TimerTask() {
-
-				    @Override
-					public void run() {
-						isGameScreen = true;
-						isLoadingScreen = false;
-						isMainScreen = false;
-						addKeyListener(new KeyListener());
-						setFocusable(true);
-						requestFocus();
-						
-						game.start(); 
-					}
-				};
-				
-				timer2.schedule(task2, 3000);
-				
+				gameLoading();
+				gameStart();
 			}
 		});
 		
@@ -300,5 +145,61 @@ public class RSP extends JFrame {
 		}
 		paintComponents(g);
 		this.repaint();
+	}
+	
+	private void gameLoading() {
+		Timer timer1 = new Timer();
+		TimerTask task1 = new TimerTask() {
+
+			@Override
+			public void run() {
+				audio.playSound("src/audio/boxingBell.wav");
+		    	RSP.game.setPlayerStatus("scissor");
+				player = "scissor";
+				random = (int)(Math.random()*3)+1;
+				switch (random) {
+				case 1:
+					RSP.game.setEnemyStatus("rock");
+					enemy = "rock";
+					break;
+				case 2:
+					RSP.game.setEnemyStatus("scissor");
+					enemy = "scissor";
+					break;
+				case 3:
+					RSP.game.setEnemyStatus("paper");
+					enemy = "paper";
+					break;
+				}
+				isLoadingScreen = true;
+				isMainScreen = false;
+				
+				rockButton.setVisible(false);
+				scissorButton.setVisible(false);
+				paperButton.setVisible(false);
+			}
+		};
+		
+		timer1.schedule(task1, 1000);
+	}
+	
+	private void gameStart() {
+		Timer timer2 = new Timer();
+		TimerTask task2 = new TimerTask() {
+
+		    @Override
+			public void run() {
+				isGameScreen = true;
+				isLoadingScreen = false;
+				isMainScreen = false;
+				addKeyListener(new KeyListener());
+				setFocusable(true);
+				requestFocus();
+				
+				game.start(); 
+			}
+		};
+		
+		timer2.schedule(task2, 3000);
 	}
 }
