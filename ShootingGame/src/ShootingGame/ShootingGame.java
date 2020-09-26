@@ -55,7 +55,7 @@ public class ShootingGame extends JFrame {
 			public void run() {
 				isLoadingScreen = false;
 				isGameScreen = true;
-				game.start();
+				game.start();	// 게임 클래스의 run 메소드 실행
 			}
 		};
 		timer1.schedule(task1, 3000);	// 3초 뒤에 실행
@@ -100,6 +100,9 @@ public class ShootingGame extends JFrame {
 			case KeyEvent.VK_ENTER:
 				if (isMainScreen) gameStart();
 				break;
+			case KeyEvent.VK_SPACE:
+				game.setShooting(true);
+				break;
 			case KeyEvent.VK_ESCAPE:
 				System.exit(0);
 				break;
@@ -119,6 +122,9 @@ public class ShootingGame extends JFrame {
 				break;
 			case KeyEvent.VK_D:
 				game.setRight(false);
+				break;
+			case KeyEvent.VK_SPACE:
+				game.setShooting(false);
 				break;
 			}
 		}
