@@ -8,34 +8,34 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 public class Game extends Thread {
-	private int delay = 20;	// ½º·¹µå ½½¸³ ÁÖ±â
+	private int delay = 20;	// ìŠ¤ë ˆë“œ ìŠ¬ë¦½ ì£¼ê¸°
 	private long pretime;
-	private int cnt;	// 0.02ÃÊ¸¶´Ù Áõ°¡
-	private boolean isOver = false;	// °ÔÀÓ ¿À¹ö ¿©ºÎ
-	
+	private int cnt;	// 0.02ì´ˆë§ˆë‹¤ ì¦ê°€
+	private boolean isOver = false;	// ê²Œì„ ì˜¤ë²„ ì—¬ë¶€
+
 	private Image player = new ImageIcon("src/images/player.png").getImage();
-	
-	private int playerX, playerY;	// ÇÃ·¹ÀÌ¾î À§Ä¡
+
+	private int playerX, playerY;	// í”Œë ˆì´ì–´ ìœ„ì¹˜
 	private int playerWidth = player.getWidth(null);
-	private int playerHeight = player.getHeight(null);	// ÇÃ·¹ÀÌ¾î °¡·Î, ¼¼·Î Å©±â
+	private int playerHeight = player.getHeight(null);	// í”Œë ˆì´ì–´ ê°€ë¡œ, ì„¸ë¡œ í¬ê¸°
 	private int playerSpeed = 10;
 	private int playerHp = 30;
 
-	private boolean up, down, left, right, shooting;	// Å° ´­¸²
-	
+	private boolean up, down, left, right, shooting;	// í‚¤ ëˆŒë¦¼
+
 	ArrayList<PlayerAttack> playerAttackList = new ArrayList<PlayerAttack>();
 	ArrayList<Enemy> enemyList = new ArrayList<Enemy>();
 	ArrayList<EnemyAttack> enemyAttackList = new ArrayList<EnemyAttack>();
 	private PlayerAttack playerAttack;
 	private Enemy enemy;
 	private EnemyAttack enemyAttack;
-	
+
 	@Override
 	public void run() {
 		cnt = 0;
 		playerX = 10;
 		playerY = (1080 - playerHeight) / 2;
-		
+
 		while (!isOver) {
 			pretime = System.currentTimeMillis();
 			if (System.currentTimeMillis() - pretime < delay) {
@@ -54,7 +54,7 @@ public class Game extends Thread {
 		}
 	}
 
-	// ÇÃ·¹ÀÌ¾î ¿òÁ÷ÀÓÀ» ¹Ş¾ÆµéÀÌ´Â ¸Ş¼Òµå
+	// í”Œë ˆì´ì–´ ì›€ì§ì„ì„ ë°›ì•„ë“¤ì´ëŠ” ë©”ì†Œë“œ
 	private void keyProcess() {
 		if (up && playerY - playerSpeed > 0) playerY -= 10;
 		if (down && playerY + playerHeight + playerSpeed < Main.SCREEN_HEIGHT) playerY += 10;
@@ -63,29 +63,29 @@ public class Game extends Thread {
 		if (shooting && cnt % 15 == 0) {
 			playerAttack = new PlayerAttack(playerX + 222, playerY + 35);
 			playerAttackList.add(playerAttack);
-		}	// 0.4ÃÊ¸¶´Ù ¹Ì»çÀÏ ¹ß»ç
+		}	// 0.4ì´ˆë§ˆë‹¤ ë¯¸ì‚¬ì¼ ë°œì‚¬
 	}
-	
-	// ÇÃ·¹ÀÌ¾îÀÇ °ø°İÀ» Ã³¸®ÇØÁÖ´Â ¸Ş¼Òµå
+
+	// í”Œë ˆì´ì–´ì˜ ê³µê²©ì„ ì²˜ë¦¬í•´ì£¼ëŠ” ë©”ì†Œë“œ
 	private void playerAttackProcess() {
 		for (int i = 0; i < playerAttackList.size(); i++) {
 			playerAttack = playerAttackList.get(i);
 			playerAttack.fire();
-			
+
 			for (int j = 0; j < enemyList.size(); j++) {
 				enemy = enemyList.get(j);
 				if (playerAttack.x > enemy.x && playerAttack.x < enemy.x + enemy.width && playerAttack.y > enemy.y && playerAttack.y < enemy.y + enemy.height) {
 					enemy.hp -= playerAttack.attack;
 					playerAttackList.remove(playerAttack);
-				}	// Ãæµ¹ ÆÇÁ¤ ÈÄ °ø°İÀÌ ÀûÁßÇßÀ¸¸é Ã¼·Â ÇÃ·¹ÀÌ¾î °ø°İ·Â¸¸Å­ Ã¼·Â °¨¼Ò½ÃÅ°±â
+				}	// ì¶©ëŒ íŒì • í›„ ê³µê²©ì´ ì ì¤‘í–ˆìœ¼ë©´ ì²´ë ¥ í”Œë ˆì´ì–´ ê³µê²©ë ¥ë§Œí¼ ì²´ë ¥ ê°ì†Œì‹œí‚¤ê¸°
 				if (enemy.hp <= 0) {
-					enemyList.remove(enemy);	// Ã¼·ÂÀÌ ¾øÀ¸¸é Á¦°Å
+					enemyList.remove(enemy);	// ì²´ë ¥ì´ ì—†ìœ¼ë©´ ì œê±°
 				}
 			}
 		}
 	}
-	
-	// ÀûÀÇ µîÀåÀ» Ã³¸®ÇØÁÖ´Â ¸Ş¼Òµå
+
+	// ì ì˜ ë“±ì¥ì„ ì²˜ë¦¬í•´ì£¼ëŠ” ë©”ì†Œë“œ
 	private void enemyAppearProcess() {
 		if (cnt % 80 == 0) {
 			int enemyY = (int)(Math.random() * 621);
@@ -93,43 +93,43 @@ public class Game extends Thread {
 			enemyList.add(enemy);
 		}
 	}
-	
-	// ÀûÀÇ ¿òÁ÷ÀÓÀ» Ã³¸®ÇØÁÖ´Â ¸Ş¼Òµå
+
+	// ì ì˜ ì›€ì§ì„ì„ ì²˜ë¦¬í•´ì£¼ëŠ” ë©”ì†Œë“œ
 	private void enemyMoveProcess() {
 		for (int i = 0; i < enemyList.size(); i++) {
 			enemyList.get(i).move();
 		}
 	}
-	
-	// ÀûÀÇ °ø°İÀ» Ã³¸®ÇØÁÖ´Â ¸Ş¼Òµå
+
+	// ì ì˜ ê³µê²©ì„ ì²˜ë¦¬í•´ì£¼ëŠ” ë©”ì†Œë“œ
 	private void enemyAttackProcess() {
 		if (cnt % 50 == 0) {
 			enemyAttack = new EnemyAttack(enemy.x - 79, enemy.y + 35);
 			enemyAttackList.add(enemyAttack);
 		}
-		
+
 		for (int i = 0; i < enemyAttackList.size(); i++) {
 			enemyAttack = enemyAttackList.get(i);
 			enemyAttack.fire();
-			
+
 			if (enemyAttack.x > playerX && enemyAttack.x < playerX + playerWidth && enemyAttack.y > playerY && enemyAttack.y < playerY + playerHeight) {
 				playerHp -= enemyAttack.attack;
 				enemyAttackList.remove(enemyAttack);
-			}	// Ãæµ¹ ÆÇÁ¤ ÈÄ °ø°İÀÌ ÀûÁßÇßÀ¸¸é ÇÃ·¹ÀÌ¾î Ã¼·Â ÀûÀÇ °ø°İ·Â¸¸Å­ Ã¼·Â °¨¼Ò½ÃÅ°±â
+			}	// ì¶©ëŒ íŒì • í›„ ê³µê²©ì´ ì ì¤‘í–ˆìœ¼ë©´ í”Œë ˆì´ì–´ ì²´ë ¥ ì ì˜ ê³µê²©ë ¥ë§Œí¼ ì²´ë ¥ ê°ì†Œì‹œí‚¤ê¸°
 			if (playerHp <= 0) {
 				isOver = true;
-				System.out.println("°ÔÀÓ ¿À¹ö");
+				System.out.println("ê²Œì„ ì˜¤ë²„");
 			}
 		}
 	}
-	
-	// °ÔÀÓ¿¡ ÇÊ¿äÇÑ °ÍµéÀ» ±×·ÁÁÖ´Â ¸Ş¼Òµå
+
+	// ê²Œì„ì— í•„ìš”í•œ ê²ƒë“¤ì„ ê·¸ë ¤ì£¼ëŠ” ë©”ì†Œë“œ
 	public void gameDraw(Graphics g) {
 		playerDraw(g);
 		enemyDraw(g);
 	}
-	
-	// ÇÃ·¹ÀÌ¾î¿Í ÇÃ·¹ÀÌ¾îÀÇ °ø°İÀ» ±×·ÁÁÖ´Â ¸Ş¼Òµå
+
+	// í”Œë ˆì´ì–´ì™€ í”Œë ˆì´ì–´ì˜ ê³µê²©ì„ ê·¸ë ¤ì£¼ëŠ” ë©”ì†Œë“œ
 	public void playerDraw(Graphics g) {
 		g.drawImage(player, playerX, playerY, null);
 		g.setColor(Color.GREEN);
@@ -139,8 +139,8 @@ public class Game extends Thread {
 			g.drawImage(playerAttack.image, playerAttack.x, playerAttack.y, null);
 		}
 	}
-	
-	// Àû°ú ÀûÀÇ °ø°İÀ» ±×·ÁÁÖ´Â ¸Ş¼Òµå
+
+	// ì ê³¼ ì ì˜ ê³µê²©ì„ ê·¸ë ¤ì£¼ëŠ” ë©”ì†Œë“œ
 	public void enemyDraw(Graphics g) {
 		for (int i = 0; i < enemyList.size(); i++) {
 			enemy = enemyList.get(i);
@@ -153,16 +153,16 @@ public class Game extends Thread {
 			g.drawImage(enemyAttack.image, enemyAttack.x, enemyAttack.y, null);
 		}
 	}
-	
-	// ¹æÇâÅ° Á¦¾î¿¡ ´ëÇÑ setter
+
+	// ë°©í–¥í‚¤ ì œì–´ì— ëŒ€í•œ setter
 	public void setUp(boolean up) {
 		this.up = up;
 	}
-		
+
 	public void setDown(boolean down) {
 		this.down = down;
 	}
-		
+
 	public void setLeft(boolean left) {
 		this.left = left;
 	}
@@ -170,7 +170,7 @@ public class Game extends Thread {
 	public void setRight(boolean right) {
 		this.right = right;
 	}
-	
+
 	public void setShooting(boolean shooting) {
 		this.shooting = shooting;
 	}

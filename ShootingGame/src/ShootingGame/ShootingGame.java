@@ -13,61 +13,61 @@ import javax.swing.JFrame;
 public class ShootingGame extends JFrame {
 	private Image bufferImage;
 	private Graphics screenGraphic;
-	
+
 	private Image mainScreen = new ImageIcon("src/images/main_screen.png").getImage();
 	private Image gameScreen = new ImageIcon("src/images/game_screen.png").getImage();
 	private Image loadingScreen = new ImageIcon("src/images/loading_screen.png").getImage();
-	
+
 	private boolean isMainScreen, isGameScreen, isLoadingScreen;
-	
+
 	public static Game game = new Game();
-	
+
 	public ShootingGame() {
 		setTitle("Shooting Game");
 		setUndecorated(true);
 		setSize(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT);
-		setResizable(false);			
+		setResizable(false);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 		setLayout(null);
-		
-		init();	// √ ±‚»≠
+
+		init();	// Ï¥àÍ∏∞Ìôî
 	}
-	
+
 	private void init() {
 		isMainScreen = true;
 		isGameScreen = false;
 		isLoadingScreen = false;
-		
+
 		addKeyListener(new KeyListener());
 		setFocusable(true);
 	}
-	
+
 	private void gameStart() {
 		isMainScreen = false;
 		isLoadingScreen = true;
-		
-		// ∑Œµ˘ »≠∏È
+
+		// Î°úÎî© ÌôîÎ©¥
 		Timer timer1 = new Timer();
 		TimerTask task1 = new TimerTask() {
 			@Override
 			public void run() {
 				isLoadingScreen = false;
 				isGameScreen = true;
-				game.start();	// ∞‘¿” ≈¨∑°Ω∫¿« run ∏ﬁº“µÂ Ω««‡
+				game.start();	// Í≤åÏûÑ ÌÅ¥ÎûòÏä§Ïùò run Î©îÏÜåÎìú Ïã§Ìñâ
 			}
 		};
-		timer1.schedule(task1, 3000);	// 3√  µ⁄ø° Ω««‡
+		timer1.schedule(task1, 3000);	// 3Ï¥à Îí§Ïóê Ïã§Ìñâ
 	}
-	
+
 	public void paint(Graphics g) {
 		bufferImage = createImage(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT);
 		screenGraphic = bufferImage.getGraphics();
 		screenDraw(screenGraphic);
 		g.drawImage(bufferImage, 0, 0, null);
-	}	// ¥ı∫Ì πˆ∆€∏µ
-	
+	}	// ÎçîÎ∏î Î≤ÑÌçºÎßÅ
+
 	public void screenDraw(Graphics g) {
 		if (isMainScreen) {
 			g.drawImage(mainScreen, 0, 0, null);
@@ -81,51 +81,51 @@ public class ShootingGame extends JFrame {
 		}
 		this.repaint();
 	}
-	
+
 	class KeyListener extends KeyAdapter {
 		public void keyPressed(KeyEvent e) {
 			switch(e.getKeyCode()) {
-			case KeyEvent.VK_W:
-				game.setUp(true);
-				break;
-			case KeyEvent.VK_S:
-				game.setDown(true);
-				break;
-			case KeyEvent.VK_A:
-				game.setLeft(true);
-				break;
-			case KeyEvent.VK_D:
-				game.setRight(true);
-				break;
-			case KeyEvent.VK_ENTER:
-				if (isMainScreen) gameStart();
-				break;
-			case KeyEvent.VK_SPACE:
-				game.setShooting(true);
-				break;
-			case KeyEvent.VK_ESCAPE:
-				System.exit(0);
-				break;
+				case KeyEvent.VK_W:
+					game.setUp(true);
+					break;
+				case KeyEvent.VK_S:
+					game.setDown(true);
+					break;
+				case KeyEvent.VK_A:
+					game.setLeft(true);
+					break;
+				case KeyEvent.VK_D:
+					game.setRight(true);
+					break;
+				case KeyEvent.VK_ENTER:
+					if (isMainScreen) gameStart();
+					break;
+				case KeyEvent.VK_SPACE:
+					game.setShooting(true);
+					break;
+				case KeyEvent.VK_ESCAPE:
+					System.exit(0);
+					break;
 			}
 		}
-		
+
 		public void keyReleased(KeyEvent e) {
 			switch(e.getKeyCode()) {
-			case KeyEvent.VK_W:
-				game.setUp(false);
-				break;
-			case KeyEvent.VK_S:
-				game.setDown(false);
-				break;
-			case KeyEvent.VK_A:
-				game.setLeft(false);
-				break;
-			case KeyEvent.VK_D:
-				game.setRight(false);
-				break;
-			case KeyEvent.VK_SPACE:
-				game.setShooting(false);
-				break;
+				case KeyEvent.VK_W:
+					game.setUp(false);
+					break;
+				case KeyEvent.VK_S:
+					game.setDown(false);
+					break;
+				case KeyEvent.VK_A:
+					game.setLeft(false);
+					break;
+				case KeyEvent.VK_D:
+					game.setRight(false);
+					break;
+				case KeyEvent.VK_SPACE:
+					game.setShooting(false);
+					break;
 			}
 		}
 	}

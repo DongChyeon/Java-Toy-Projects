@@ -9,7 +9,7 @@ public class EnemyAttack {
 	int x, y;
 	int width = image.getWidth(null);
 	int height = image.getHeight(null);
-	int attack = 5;	// °ø°Ý·Â
+	int attack = 5;
 	
 	public EnemyAttack(int x, int y) {
 		this.x = x;
