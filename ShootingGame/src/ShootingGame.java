@@ -17,6 +17,8 @@ public class ShootingGame extends JFrame {
 
     public static Game game = new Game();
 
+    private Audio backgroundMusic;
+
     public ShootingGame() {
         setTitle("Shooting Game");
         setUndecorated(true);
@@ -35,6 +37,9 @@ public class ShootingGame extends JFrame {
         isLoadingScreen = false;
         isGameScreen = false;
 
+        backgroundMusic = new Audio("src/audio/menuBGM.wav", true);
+        backgroundMusic.start();
+
         addKeyListener(new KeyListener());
     }
 
@@ -46,6 +51,7 @@ public class ShootingGame extends JFrame {
         TimerTask loadingTask = new TimerTask() {
             @Override
             public void run() {
+                backgroundMusic.stop();
                 isLoadingScreen = false;
                 isGameScreen = true;
                 game.start();

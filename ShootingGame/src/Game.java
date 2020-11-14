@@ -25,11 +25,19 @@ public class Game extends Thread {
     private Enemy enemy;
     private EnemyAttack enemyAttack;
 
+    private Audio backgroundMusic;
+    private Audio hitSound;
+
     @Override
     public void run() {
         cnt = 0;
         playerX = 10;
         playerY = (Main.SCREEN_HEIGHT - playerHeight) / 2;
+
+        backgroundMusic = new Audio("src/audio/gameBGM.wav", true);
+        hitSound = new Audio("src/audio/hitSound.wav", false);
+
+        backgroundMusic.start();
 
         while (true) {
             pretime = System.currentTimeMillis();
@@ -72,6 +80,7 @@ public class Game extends Thread {
                     playerAttackList.remove(playerAttack);
                 }
                 if (enemy.hp <= 0) {
+                    hitSound.start();
                     enemyList.remove(enemy);
                 }
             }
@@ -81,8 +90,6 @@ public class Game extends Thread {
     private void enemyAppearProcess() {
         if (cnt % 80 == 0) {
             enemy = new Enemy(1120, (int)(Math.random()*621));
-
-
             enemyList.add(enemy);
         }
     }
@@ -105,6 +112,7 @@ public class Game extends Thread {
             enemyAttack.fire();
 
             if (enemyAttack.x > playerX & enemyAttack.x < playerX + playerWidth && enemyAttack.y > playerY && enemyAttack.y < playerY + playerHeight) {
+                hitSound.start();
                 playerHp -= enemyAttack.attack;
                 enemyAttackList.remove(enemyAttack);
             }

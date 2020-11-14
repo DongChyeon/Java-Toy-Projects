@@ -19,24 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c364d988-3aeb-4045-a2ac-7c70b2f4444d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ShootingGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShootingGame/Enemy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShootingGame/EnemyAttack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShootingGame/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShootingGame/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShootingGame/PlayerAttack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShootingGame/ShootingGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/enemy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/enemy_attack.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/player.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/player_attack.png" beforeDir="false" />
+    <list default="true" id="b28072b3-2346-4e0b-9308-1dcfc4b7b8d8" name="Default Changelist" comment="Upload">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Audio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/audio/gameBGM.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/audio/hitSound.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/audio/menuBGM.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ShootingGame/ShootingGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShootingGame/ShootingGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShootingGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShootingGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +45,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1iADcUaEr4BcY7IYjLgDGL021lG" />
+  <component name="ProjectId" id="1iAX73a8jJF29ISICUu61sfmylA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -61,11 +53,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/images" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/audio" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kimdo\git\Java-Mini-Projects\ShootingGame\src\audio" />
       <recent name="C:\Users\kimdo\git\Java-Mini-Projects\ShootingGame\src\images" />
     </key>
   </component>
@@ -86,12 +80,20 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c364d988-3aeb-4045-a2ac-7c70b2f4444d" name="Default Changelist" comment="" />
-      <created>1601341583541</created>
+      <changelist id="b28072b3-2346-4e0b-9308-1dcfc4b7b8d8" name="Default Changelist" comment="" />
+      <created>1601351201608</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1601341583541</updated>
+      <updated>1601351201608</updated>
     </task>
+    <task id="LOCAL-00001" summary="Upload">
+      <created>1604215880827</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604215880827</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -104,31 +106,52 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Upload" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upload" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1601341978324">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1601944583380">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1601341978324" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1601342215749">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1601944583380" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605362697304">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601342215749" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1601342215748">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1605362697304" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1604887709549">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601342215748" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1601342215748">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1604887709549" />
+    <state width="1493" height="143" key="GridCell.Tab.0.bottom" timestamp="1605363186571">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601342215748" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1601342215748">
+    <state width="1493" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605363186571" />
+    <state width="1493" height="143" key="GridCell.Tab.0.center" timestamp="1605363186570">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601342215748" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1601341619248">
+    <state width="1493" height="143" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605363186570" />
+    <state width="1493" height="143" key="GridCell.Tab.0.left" timestamp="1605363186569">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601341619248" />
+    <state width="1493" height="143" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605363186569" />
+    <state width="1493" height="143" key="GridCell.Tab.0.right" timestamp="1605363186570">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="143" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605363186570" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1601352108868">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601352108868" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1604215897087">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604215897087" />
+    <state x="0" y="24" key="new project wizard" timestamp="1604887729225">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="24" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1604887729225" />
   </component>
 </project>
