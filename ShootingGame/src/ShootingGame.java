@@ -15,7 +15,7 @@ public class ShootingGame extends JFrame {
 
     private boolean isMainScreen, isLoadingScreen, isGameScreen;
 
-    public static Game game = new Game();
+    private Game game = new Game();
 
     private Audio backgroundMusic;
 
@@ -95,6 +95,9 @@ public class ShootingGame extends JFrame {
                     break;
                 case KeyEvent.VK_D:
                     game.setRight(true);
+                    break;
+                case KeyEvent.VK_R:
+                    if (game.isOver()) game.reset();
                     break;
                 case KeyEvent.VK_SPACE:
                     game.setShooting(true);

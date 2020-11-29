@@ -20,13 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b28072b3-2346-4e0b-9308-1dcfc4b7b8d8" name="Default Changelist" comment="Upload">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Audio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/audio/gameBGM.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/audio/hitSound.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/audio/menuBGM.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ShootingGame/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShootingGame/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ShootingGame/ShootingGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShootingGame/ShootingGame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ShootingGame/ShootingGame$KeyListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShootingGame/ShootingGame$KeyListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ShootingGame/ShootingGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShootingGame/ShootingGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ShootingGame/audio/gameBGM.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShootingGame/audio/gameBGM.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ShootingGame/audio/menuBGM.wav" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShootingGame/audio/menuBGM.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ShootingGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShootingGame.java" afterDir="false" />
     </list>
@@ -54,7 +54,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/audio" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
@@ -113,34 +113,34 @@
     <option name="LAST_COMMIT_MESSAGE" value="Upload" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1601944583380">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1606624437551">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1601944583380" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1606624437551" />
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605362697304">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1605362697304" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1604887709549">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1605490712564">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1604887709549" />
-    <state width="1493" height="143" key="GridCell.Tab.0.bottom" timestamp="1605363186571">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605490712564" />
+    <state width="1493" height="143" key="GridCell.Tab.0.bottom" timestamp="1606624543725">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605363186571" />
-    <state width="1493" height="143" key="GridCell.Tab.0.center" timestamp="1605363186570">
+    <state width="1493" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606624543725" />
+    <state width="1493" height="143" key="GridCell.Tab.0.center" timestamp="1606624543725">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605363186570" />
-    <state width="1493" height="143" key="GridCell.Tab.0.left" timestamp="1605363186569">
+    <state width="1493" height="143" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606624543725" />
+    <state width="1493" height="143" key="GridCell.Tab.0.left" timestamp="1606624543725">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605363186569" />
-    <state width="1493" height="143" key="GridCell.Tab.0.right" timestamp="1605363186570">
+    <state width="1493" height="143" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606624543725" />
+    <state width="1493" height="143" key="GridCell.Tab.0.right" timestamp="1606624543725">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605363186570" />
+    <state width="1493" height="143" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606624543725" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1601352108868">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
